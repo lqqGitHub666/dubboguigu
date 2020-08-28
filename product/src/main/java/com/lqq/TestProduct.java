@@ -1,8 +1,9 @@
 package com.lqq;
 
 
-import com.lqq.service.UserService;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 /**
@@ -12,13 +13,11 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * @Date: 2020/8/27 21:43
  * @Version: 1.0
  */
+@EnableDubbo
+@SpringBootApplication
 public class TestProduct {
 
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[]{"classpath:product.xml"});
-        context.start();
-        UserService userService = (UserService) context.getBean("userService");
-        String str = userService.user("lqq");
-        System.out.println(str);
+        SpringApplication.run(TestProduct.class,args);
     }
 }
