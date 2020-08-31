@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class ProductServiceImpl implements ProductService {
 
-    @Reference(version = "1.0.0",check = true)
+    @Reference(version = "1.0.0",check = false)
     private UserService userService;
 
     @Override

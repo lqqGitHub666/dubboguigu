@@ -1,8 +1,15 @@
 package com.lqq.impl;
 
+import com.lqq.model.Product;
+import com.lqq.service.ProductProviderService;
 import com.lqq.service.UserService;
+import org.apache.dubbo.config.annotation.Reference;
 import org.apache.dubbo.config.annotation.Service;
 import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.List;
+
 
 /**
  * @ClassName: UserServiceImpl
@@ -15,9 +22,17 @@ import org.springframework.stereotype.Component;
 @Component
 public class UserServiceImpl implements UserService {
 
+    @Reference(version = "1.0.0",check = false)
+    private ProductProviderService productProviderService;
+
     @Override
     public String user(String name) {
         System.out.println("hello " + name);
+        List<Product> productList;
+        System.out.println(productList = productProviderService.getProductList());
+        for (Product product : productList) {
+            System.out.println(product.getId()+"----"+product.getName()+"----"+product.getPrice());
+        }
         return name;
     }
 }
