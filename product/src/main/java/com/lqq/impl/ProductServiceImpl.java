@@ -19,8 +19,8 @@ public class ProductServiceImpl implements ProductService {
     private UserService userService;
 
     @Override
-    public void product() {
+    public String product() {
         System.out.println("product");
-        System.out.println(userService.user("lqq"));
+        return userService.user("lqq");
     }
 }

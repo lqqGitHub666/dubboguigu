@@ -30,9 +30,11 @@ public class UserServiceImpl implements UserService {
         System.out.println("hello " + name);
         List<Product> productList;
         System.out.println(productList = productProviderService.getProductList());
+        String productStr = "";
         for (Product product : productList) {
             System.out.println(product.getId()+"----"+product.getName()+"----"+product.getPrice());
+            productStr = productStr + product.getId()+"----"+product.getName()+"----"+product.getPrice()+"\n";
         }
-        return name;
+        return productStr;
     }
 }
