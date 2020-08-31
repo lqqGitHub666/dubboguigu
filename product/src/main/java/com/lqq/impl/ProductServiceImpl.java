@@ -15,12 +15,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class ProductServiceImpl implements ProductService {
 
-    @Reference(version = "1.0.0",check = true)
+    @Reference(version = "1.0.0",check = false)
     private UserService userService;
 
     @Override
-    public void product() {
+    public String product() {
         System.out.println("product");
-        System.out.println(userService.user("lqq"));
+        return userService.user("lqq");
     }
 }
