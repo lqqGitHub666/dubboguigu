@@ -13,7 +13,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Date: 2020/8/27 21:43
  * @Version: 1.0
  */
-@EnableDubbo
 @SpringBootApplication
 public class TestProduct {
 
