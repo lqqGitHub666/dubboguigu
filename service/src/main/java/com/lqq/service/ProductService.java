@@ -1,7 +1,11 @@
 package com.lqq.service;
 
+import com.lqq.model.Product;
+
+import java.util.List;
+
 public interface ProductService {
 
-    String product();
+    List<Product> product();
 
 }

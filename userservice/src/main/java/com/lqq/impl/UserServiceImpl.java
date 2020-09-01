@@ -25,7 +25,7 @@ public class UserServiceImpl implements UserService {
     private ProductProviderService productProviderService;
 
     @Override
-    public String user(String name) {
+    public List<Product> user(String name) {
         System.out.println("hello " + name);
         List<Product> productList;
         System.out.println(productList = productProviderService.getProductList());
@@ -34,6 +34,6 @@ public class UserServiceImpl implements UserService {
             System.out.println(product.getId()+"----"+product.getName()+"----"+product.getPrice());
             productStr = productStr + product.getId()+"----"+product.getName()+"----"+product.getPrice()+"\n";
         }
-        return productStr;
+        return productList;
     }
 }

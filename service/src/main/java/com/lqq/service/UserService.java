@@ -1,5 +1,9 @@
 package com.lqq.service;
 
+import com.lqq.model.Product;
+
+import java.util.List;
+
 /**
  * @ClassName: UserService
  * @Description: TODO
@@ -9,5 +13,5 @@ package com.lqq.service;
  */
 public interface UserService {
 
-    String user(String name);
+    List<Product> user(String name);
 }
