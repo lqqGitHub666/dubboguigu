@@ -1,13 +1,8 @@
 package com.lqq.impl;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 import com.lqq.model.Product;
 import com.lqq.service.ProductService;
 import com.lqq.service.UserService;
-import org.apache.dubbo.common.json.JSON;
 import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.stereotype.Service;
 
