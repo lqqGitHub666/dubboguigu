@@ -7,7 +7,6 @@ import org.apache.dubbo.config.annotation.Reference;
 import org.apache.dubbo.config.annotation.Service;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -18,11 +17,11 @@ import java.util.List;
  * @Date: 2020/8/27 18:21
  * @Version: 1.0
  */
-@Service(version = "1.0.0",interfaceClass = UserService.class)
+@Service(version = "${dubbo.application.version}",interfaceClass = UserService.class)
 @Component
 public class UserServiceImpl implements UserService {
 
-    @Reference(version = "1.0.0",check = false)
+    @Reference(version = "${dubbo.application.version}",check = false)
     private ProductProviderService productProviderService;
 
     @Override
