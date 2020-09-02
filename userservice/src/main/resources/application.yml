@@ -1,22 +1,22 @@
-server:
-  port: 8085
-spring:
-  profiles:
-    active: home
-  application:
-    name: userservice_test
-dubbo:
-  application:
-    version: 1.0.0
-    name: userservice
-  protocol:
-    name: dubbo
-    port: 20882
-  monitor:
-    protocol: registry
-  consumer:
-    check: false
-  registry:
-    check: false
-  scan:
-    base-packages: com.lqq.impl
+#server:
+#  port: 8085
+#spring:
+#  profiles:
+#    active: home
+#  application:
+#    name: userservice_test
+#dubbo:
+#  application:
+#    version: 1.0.0
+#    name: userservice
+#  protocol:
+#    name: dubbo
+#    port: 20882
+#  monitor:
+#    protocol: registry
+#  consumer:
+#    check: false
+#  registry:
+#    check: false
+#  scan:
+#    base-packages: com.lqq.impl

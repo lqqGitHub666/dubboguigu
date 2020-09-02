@@ -18,12 +18,12 @@ import java.util.List;
 @Service
 public class ProductServiceImpl implements ProductService {
 
-    @Reference
+    @Reference(stub = "com.lqq.impl.UserServiceStub")
     private UserService userService;
 
     @Override
-    public List<Product> product() {
+    public List<Product> product(String name) {
         System.out.println("product");
-        return userService.user("lqq");
+        return userService.user(name);
     }
 }

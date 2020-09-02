@@ -20,6 +20,7 @@ import java.util.Map;
  * @Date: 2020/8/27 18:21
  * @Version: 1.0
  */
+//(timeout = 5000,retries = 3)
 @Service
 @Component
 public class UserServiceImpl implements UserService {

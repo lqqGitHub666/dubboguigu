@@ -19,7 +19,7 @@ public class ProductController {
     private ProductService productService;
 
     @GetMapping("/test")
-    public Object testUser(){
-        return productService.product();
+    public Object testUser(String name){
+        return productService.product(name);
     }
 }
