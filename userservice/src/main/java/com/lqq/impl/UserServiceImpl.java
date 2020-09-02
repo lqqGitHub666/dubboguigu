@@ -46,7 +46,7 @@ public class UserServiceImpl implements UserService {
     }
 
     public void test(Product product){
-
+        System.out.println(product.getId());
     }
 
     public static void main(String[] args) {
@@ -64,8 +64,6 @@ public class UserServiceImpl implements UserService {
         Map<String,Object> map = new HashMap<>();
         map.put(null,null);
         map.put(null,null);
-        map.forEach((s, o) -> {
-            System.out.println(s+"-------"+o);
-        });
+        map.forEach((s, o) -> System.out.println(s + "-------" + o));
     }
 }
