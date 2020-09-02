@@ -1,0 +1,20 @@
+server:
+  port: 8081
+spring:
+  profiles:
+    active: company
+  application:
+    #spring项目名
+    name: product_test
+dubbo:
+  application:
+    version: 1.0.0
+    name: product
+  protocol:
+    name: dubbo
+    port: 20880
+  monitor:
+    protocol: registry
+  #扫描注解包通过该设置将服务注册到zookeeper
+  scan:
+    base-packages: com.lqq.impl
