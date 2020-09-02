@@ -18,7 +18,7 @@ import java.util.List;
 @Service
 public class ProductServiceImpl implements ProductService {
 
-    @Reference(version = "${dubbo.application.version}",check = false)
+    @Reference
     private UserService userService;
 
     @Override

@@ -2,9 +2,8 @@ server:
   port: 8081
 spring:
   profiles:
-    active: company
+    active: home
   application:
-    #spring项目名
     name: product_test
 dubbo:
   application:
@@ -15,6 +14,9 @@ dubbo:
     port: 20880
   monitor:
     protocol: registry
-  #扫描注解包通过该设置将服务注册到zookeeper
+  consumer:
+    check: false
+  registry:
+    check: false
   scan:
     base-packages: com.lqq.impl

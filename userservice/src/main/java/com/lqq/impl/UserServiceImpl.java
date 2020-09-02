@@ -20,11 +20,11 @@ import java.util.Map;
  * @Date: 2020/8/27 18:21
  * @Version: 1.0
  */
-@Service(version = "${dubbo.application.version}",interfaceClass = UserService.class)
+@Service
 @Component
 public class UserServiceImpl implements UserService {
 
-    @Reference(version = "${dubbo.application.version}",check = false)
+    @Reference
     private ProductProviderService productProviderService;
 
     @Override

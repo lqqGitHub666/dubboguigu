@@ -15,7 +15,7 @@ import java.util.List;
  * @Date: 2020/8/31 14:40
  * @Version: 1.0
  */
-@Service(version = "${dubbo.application.version}",interfaceClass = ProductProviderService.class)
+@Service
 @Component
 public class ProductProviderServiceImpl implements ProductProviderService {
     @Override
