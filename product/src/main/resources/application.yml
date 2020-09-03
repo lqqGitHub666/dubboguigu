@@ -2,7 +2,8 @@ server:
   port: 8081
 spring:
   profiles:
-    active: home
+    active: company
+#    active: home
   application:
     name: product_test
 dubbo:

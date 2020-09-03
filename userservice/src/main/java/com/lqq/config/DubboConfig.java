@@ -1,5 +1,6 @@
 package com.lqq.config;
 
+import com.lqq.service.ProductProviderService;
 import com.lqq.service.UserService;
 import org.apache.dubbo.config.*;
 import org.springframework.context.annotation.Bean;
@@ -28,7 +29,7 @@ public class DubboConfig {
     public RegistryConfig registryConfig(){
         RegistryConfig registryConfig = new RegistryConfig();
         registryConfig.setProtocol("zookeeper");
-        registryConfig.setAddress("192.168.38.3:2181");
+        registryConfig.setAddress("192.168.72.3:2181");
         return registryConfig;
     }
 
@@ -42,6 +43,7 @@ public class DubboConfig {
         MethodConfig methodConfig = new MethodConfig();
         methodConfig.setName("user");
         methodConfig.setTimeout(5000);
+        methodConfig.setRetries(3);
         //将method关联到service配置中
         List<MethodConfig> methodConfigList = new ArrayList<>();
         methodConfigList.add(methodConfig);
@@ -56,7 +58,20 @@ public class DubboConfig {
         protocolConfig.setPort(20882);
         return protocolConfig;
     }
-//    ProviderConfig
+
+    @Bean
+    public ReferenceConfig<ProductProviderService> productProviderService(){
+        ReferenceConfig<ProductProviderService> productProviderServiceReferenceConfig = new ReferenceConfig<>();
+        productProviderServiceReferenceConfig.setInterface(ProductProviderService.class);
+        return productProviderServiceReferenceConfig;
+    }
+
+    @Bean
+    public ConsumerConfig consumerConfig(){
+        ConsumerConfig consumerConfig = new ConsumerConfig();
+        consumerConfig.setCheck(false);
+        return consumerConfig;
+    }
 //    MonitorConfig
 }
 

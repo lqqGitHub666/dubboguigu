@@ -25,6 +25,7 @@ import java.util.Map;
 @Component
 public class UserServiceImpl implements UserService {
 
+//    @Reference(timeout = 6000,retries = 1)
     @Reference
     private ProductProviderService productProviderService;
 
@@ -33,13 +34,8 @@ public class UserServiceImpl implements UserService {
         System.out.println("hello " + name);
         List<Product> productList;
         System.out.println(productList = productProviderService.getProductList());
-        String productStr = "";
-        //            productStr = productStr + product.getId() + "----" + product.getName() + "----" + product.getPrice() + "\n";
         productList.stream().map(product -> product.getId() + "----" + product.getName() + "----" + product.getPrice()).forEach(System.out::println);
-        for (Product product : productList) {
-            String id = product.getId();
-            System.out.println(id);
-        }
+        productList.stream().map(Product::getId).forEach(System.out::println);
         productList.forEach(product -> test(product));
 
 
