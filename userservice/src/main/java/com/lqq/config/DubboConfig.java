@@ -29,7 +29,9 @@ public class DubboConfig {
     public RegistryConfig registryConfig(){
         RegistryConfig registryConfig = new RegistryConfig();
         registryConfig.setProtocol("zookeeper");
-        registryConfig.setAddress("192.168.72.3:2181");
+        registryConfig.setAddress("192.168.38.3:2181");
+        registryConfig.setCheck(false);
+//        registryConfig.setAddress("192.168.72.3:2181");
         return registryConfig;
     }
 
@@ -63,6 +65,7 @@ public class DubboConfig {
     public ReferenceConfig<ProductProviderService> productProviderService(){
         ReferenceConfig<ProductProviderService> productProviderServiceReferenceConfig = new ReferenceConfig<>();
         productProviderServiceReferenceConfig.setInterface(ProductProviderService.class);
+        productProviderServiceReferenceConfig.setCheck(false);
         return productProviderServiceReferenceConfig;
     }
 
@@ -72,6 +75,7 @@ public class DubboConfig {
         consumerConfig.setCheck(false);
         return consumerConfig;
     }
+
 //    MonitorConfig
 }
 

@@ -2,8 +2,8 @@ server:
   port: 8081
 spring:
   profiles:
-    active: company
-#    active: home
+    active: home
+#    active: company
   application:
     name: product_test
 dubbo:
@@ -16,8 +16,6 @@ dubbo:
   monitor:
     protocol: registry
   consumer:
-    check: false
-  registry:
     check: false
   scan:
     base-packages: com.lqq.impl

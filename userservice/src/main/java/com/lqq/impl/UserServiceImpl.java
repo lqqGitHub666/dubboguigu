@@ -25,8 +25,7 @@ import java.util.Map;
 @Component
 public class UserServiceImpl implements UserService {
 
-//    @Reference(timeout = 6000,retries = 1)
-    @Reference
+    @Reference(timeout = 6000,retries = 1)
     private ProductProviderService productProviderService;
 
     @Override
