@@ -29,9 +29,9 @@ public class DubboConfig {
     public RegistryConfig registryConfig(){
         RegistryConfig registryConfig = new RegistryConfig();
         registryConfig.setProtocol("zookeeper");
-        registryConfig.setAddress("192.168.38.3:2181");
+//        registryConfig.setAddress("192.168.38.3:2181");
         registryConfig.setCheck(false);
-//        registryConfig.setAddress("192.168.72.3:2181");
+        registryConfig.setAddress("192.168.72.3:2181");
         return registryConfig;
     }
 
